@@ -8,7 +8,7 @@ class App
     
     public function __construct()
     {
-        $this-splitUrl();
+        $this->splitUrl();
         
         if(!$this->url_controller) {
             require APP . 'controller/home.php';
