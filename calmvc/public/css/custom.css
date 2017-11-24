@@ -1,3 +1,15 @@
 body {
-  padding-top: 2rem;
+  padding-top: 9rem;
+}
+
+.containerzile
+{
+    background-color: #23527c;
+    padding: 9px;
+    color: white;
+}
+.numezile
+{
+    font-weight: bold;
+    
 }
