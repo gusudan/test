@@ -82,81 +82,56 @@
 
         <div class="container">
 
-            <div class="col-xs-7 containerzile">
-
-                <div class="row">
-                    <div class="col-xs-12 luna">
-                        <div class="col-xs-4"><span class="glyphicon glyphicon-chevron-left"></span></div>
-                        <div class="col-xs-4">Ianuarie</div>
-                        <div class="col-xs-4"><span class="glyphicon glyphicon-chevron-right"></span></div>
+            <div class="col-md-4 col-md-offset-4">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="inputemail" class="col-sm-3 control-label">Email</label>
+                        <div class="col-sm-9">
+                            <input type="email" class="form-control" id="inputemail" placeholder="Email">
+                        </div>
 
                     </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="col-xs-1 numezile">Luni</div>
-                        <div class="col-xs-2 numezile">Marti</div>
-                        <div class="col-xs-2 numezile">Miercuri</div>
-                        <div class="col-xs-1 numezile">Joi</div>
-                        <div class="col-xs-2 numezile">Vineri</div>
-                        <div class="col-xs-2 numezile">Sambata</div>
-                        <div class="col-xs-2 numezile">Duminica</div>
+                    <div class="form-group">
+                        <label for="inputnume" class="col-sm-3 control-label">Nume</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputnume" placeholder="Nume">
+                        </div>
+
                     </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="col-xs-1 zile">1</div>
-                        <div class="col-xs-2 zile">2</div>
-                        <div class="col-xs-2 zile">3</div>
-                        <div class="col-xs-1 zile">4</div>
-                        <div class="col-xs-2 zile">5</div>
-                        <div class="col-xs-2 zile">6</div>
-                        <div class="col-xs-2 zile">7</div>
-                        <div class="col-xs-1 zile">1</div>
-                        <div class="col-xs-2 zile">2</div>
-                        <div class="col-xs-2 zile">3</div>
-                        <div class="col-xs-1 zile">4</div>
-                        <div class="col-xs-2 zile">5</div>
-                        <div class="col-xs-2 zile">6</div>
-                        <div class="col-xs-2 zile">7</div>
-                        <div class="col-xs-1 zile">1</div>
-                        <div class="col-xs-2 zile">2</div>
-                        <div class="col-xs-2 zile">3</div>
-                        <div class="col-xs-1 zile">4</div>
-                        <div class="col-xs-2 zile">5</div>
-                        <div class="col-xs-2 zile">6</div>
-                        <div class="col-xs-2 zile">7</div>
-                        <div class="col-xs-1 zile">1</div>
-                        <div class="col-xs-2 zile">2</div>
-                        <div class="col-xs-2 zile">3</div>
-                        <div class="col-xs-1 zile">4</div>
-                        <div class="col-xs-2 zile">5</div>
-                        <div class="col-xs-2 zile">6</div>
-                        <div class="col-xs-2 zile">7</div>
+                    <div class="form-group">
+                        <label for="inputprenume" class="col-sm-3 control-label">Prenume</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputprenume" placeholder="Prenume">
+                        </div>
+
                     </div>
-                </div>
-            </div>
 
+                    <div class="form-group">
+                        <label for="inputpass" class="col-sm-3 control-label">Parola</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="inputpass" placeholder="Parola">
+                        </div>
 
-            <div class="col-xs-5">
-                <div class="col-xs-12">
-                    <div class="col-xs-12 headerevenimente">Urmatoarele evenimente</div>
-                    <div class="col-xs-12 urmevenimente">25.02.1999 - Next</div>
-                    <div class="col-xs-12 urmevenimente">25.02.1999 - Next</div>
-                    <div class="col-xs-12 urmevenimente">25.02.1999 - Next</div>
-                    <div class="col-xs-12 urmevenimente">25.02.1999 - Next</div>
-                    <div class="col-xs-12 urmevenimente">25.02.1999 - Next</div>
-                    <div class="col-xs-12 urmevenimente">25.02.1999 - Next</div>
-                    <div class="col-xs-12 urmevenimente">25.02.1999 - Next</div>
-                </div>
-            </div>
+                    </div>
 
+                    <div class="form-group">
+                        <label for="inputpass2" class="col-sm-3 control-label">Confirma parola</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="inputpass2" placeholder="Confirma parola">
+                        </div>
 
+                    </div>
 
+                    <div class="form-group">
+                        <div class="col-md-4 col-md-offset-4">
+                            <input type="submit" class="form-control btn btn-default" id="submit" placeholder="Register">
+                        </div>
 
-
+                    </div>
+                </form>
+            </div>       
         </div> <!-- /container -->
 
 
