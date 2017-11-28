@@ -13,6 +13,6 @@ define('URL', URL_PROTOCOL . URL_DOMAIN . URL_SUB_FOLDER);
 //DB stuff
 define('DB_TYPE', 'mysql');
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'calendar');
+define('DB_NAME', 'calmvc');
 define('DB_USER', 'root');
 define('DB_PASS', 'root');

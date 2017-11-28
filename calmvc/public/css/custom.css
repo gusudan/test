@@ -65,3 +65,14 @@ body {
     padding: 20px 20px;
     text-transform: uppercase;
 }
+
+.newback {    
+    background: #666666;
+    color: #fff;
+}
+
+.newheaders {
+    background-color: #333333 !important;
+    color: #fff !important;
+    
+}
