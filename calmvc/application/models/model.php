@@ -11,4 +11,17 @@ class Model
             exit('Database connection could not be established.');
         }
     }
+    
+    function adduser($email, $nume, $prenume, $pass){
+        
+        $sql = "INSERT INTO users (email, nume, prenume, parola) VALUES (:email, :nume, :prenume, :pass)";
+        $query = $this->db->prepare($sql);
+        $parameters = array(':email' => $email, ':nume' => $nume, ':prenume' => $prenume, ':pass' => $pass);
+
+        // useful for debugging: you can see the SQL behind above construction by using:
+        // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
+
+        $query->execute($parameters);
+    
+    }
 }

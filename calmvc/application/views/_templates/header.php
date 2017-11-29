@@ -39,7 +39,7 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="<?php echo URL; ?>">Home</a></li>
-                        <li class=""><a href="<?php echo URL; ?>register">Register</a></li>
+                        <li class=""><a href="<?php echo URL; ?>users">Register</a></li>
                         <li class=""><a href="<?php echo URL; ?>adauga_eveniment">Adauga Eveniment</a></li>
                         
 <!--                        <li class="dropdown">

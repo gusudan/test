@@ -22,7 +22,7 @@ class App
                 if (!empty($this->url_params)) {
                     call_user_func_array(array($this->url_controller, $this->url_action), $this->url_params);
                 } else {
-                    $this->url_controller->$this->url_action();
+                    $this->url_controller->{$this->url_action}();
                 }
             } else { 
                 if(strlen($this->url_action == 0)) 

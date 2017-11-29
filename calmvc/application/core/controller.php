@@ -2,8 +2,8 @@
 
 class Controller {
 
-private $db = null;
-private $model = null;
+public $db = null;
+public $model = null;
 
     function __construct() {
         $this->OpenDatabaseConnection();
