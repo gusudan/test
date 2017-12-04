@@ -59,21 +59,25 @@
                     <ul class="nav navbar-nav navbar-right">
 
                         <li>
-
-                            <form id="signin" class="navbar-form navbar-right loginnav" role="form">
+                                                      
+                            
+                            <?php if (isset($_SESSION['email'])) : ?>
+                            <div class="bg-info">Welcome <?php echo $_SESSION['email']?> - LOGOUT</div>
+                            <?php else :?>
+                            <form id="signin" class="navbar-form navbar-right loginnav" role="form" action="<?php echo URL; ?>users/login" method="POST">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                    <input id="email" type="email" class="form-control" name="email" value="" placeholder="Email Address">                                        
+                                    <input id="email" type="email" class="form-control" name="email" placeholder="Email Address">                                        
                                 </div>
 
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                    <input id="password" type="password" class="form-control" name="password" value="" placeholder="Password">                                        
+                                    <input id="password" type="password" class="form-control" name="password" placeholder="Password">                                        
                                 </div>
 
-                                <button type="submit" class="btn btn-default">Login</button>
+                                <button type="submit" class="btn btn-default" name="login">Login</button>
                             </form>
-
+                            <?php endif;?>
                         </li>
 
                     </ul>
@@ -85,3 +89,14 @@
 
 
         <div class="container">
+
+
+            <?php if (isset($_SESSION['msg'])): ?>
+                <div class="alert alert-info">
+                    <?php
+                    echo $_SESSION['msg'];
+                    unset($_SESSION['msg']);
+                    ?>
+                </div>
+            <?php endif; ?>
+                        
