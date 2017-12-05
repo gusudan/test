@@ -12,7 +12,7 @@ class Users extends Controller {
     public function adduser() {
         if (isset($_POST["submit"]) && ($_POST["inputpass"] === $_POST["inputpass2"])) {
             $nruser = $this->model->finduser($_POST["inputemail"]);
-                        
+
             if ($nruser != 0) {
                 $_SESSION['msg'] = "Adresa de email deja existenta.";
             } else {
@@ -27,28 +27,48 @@ class Users extends Controller {
 
         header('location: ' . URL . 'users/index');
     }
-    
-    public function login(){
-        if (isset($_POST["login"])){
+
+    public function login() {
+        if (isset($_POST["login"])) {
             $nruser = $this->model->finduser($_POST["email"]);
-                        
+
             if ($nruser == 0) {
                 $_SESSION['msg'] = "Adresa de email nu exista.";
             } else {
-                
+
                 $user = $this->model->login($_POST["email"], $_POST["password"]);
+                if ($user == NULL){
+                    $_SESSION['msg'] = "Parola gresita";
+                } else {
                 $_SESSION['email'] = $user->email;
-                               
+                $_SESSION['isloggedin'] = TRUE;
+                }
             }
         } else {
             $_SESSION['msg'] = "Nu ai completat datele de login.";
         }
         header('location: ' . URL . 'users/index');
     }
-    
-    public function logout(){
-        session_destroy();
+
+    public function logout() {
+
+        // Unset all of the session variables.
+        $_SESSION['email'] = NULL;
+        $_SESSION['isloggedin'] = FALSE;
+
+// If it's desired to kill the session, also delete the session cookie.
+// Note: This will destroy the session, and not just the session data!
+        if (ini_get("session.use_cookies")) {
+            $params = session_get_cookie_params();
+            setcookie(session_name(), '', time() - 42000, $params["path"], $params["domain"], $params["secure"], $params["httponly"]
+            );
+        }
+
+// Finally, destroy the session.
+        //session_destroy();
+        
         header('location: ' . URL . 'users/index');
+        
     }
 
 }

@@ -41,44 +41,53 @@
                         <li class="active"><a href="<?php echo URL; ?>">Home</a></li>
                         <li class=""><a href="<?php echo URL; ?>users">Register</a></li>
                         <li class=""><a href="<?php echo URL; ?>adauga_eveniment">Adauga Eveniment</a></li>
-                        
-<!--                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
-                            </ul>
-                        </li>-->
-                        
+
+                        <!--                        <li class="dropdown">
+                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="#">Action</a></li>
+                                                        <li><a href="#">Another action</a></li>
+                                                        <li><a href="#">Something else here</a></li>
+                                                        <li role="separator" class="divider"></li>
+                                                        <li class="dropdown-header">Nav header</li>
+                                                        <li><a href="#">Separated link</a></li>
+                                                        <li><a href="#">One more separated link</a></li>
+                                                    </ul>
+                                                </li>-->
+
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
 
-                        <li>
-                                                      
-                            
-                            <?php if (isset($_SESSION['email'])) : ?>
-                            <div class="bg-info">Welcome <?php echo $_SESSION['email']?> - LOGOUT</div>
-                            <?php else :?>
-                            <form id="signin" class="navbar-form navbar-right loginnav" role="form" action="<?php echo URL; ?>users/login" method="POST">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                    <input id="email" type="email" class="form-control" name="email" placeholder="Email Address">                                        
-                                </div>
 
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                    <input id="password" type="password" class="form-control" name="password" placeholder="Password">                                        
-                                </div>
 
-                                <button type="submit" class="btn btn-default" name="login">Login</button>
-                            </form>
-                            <?php endif;?>
-                        </li>
+
+                        <?php if (isset($_SESSION['email'])) : ?>
+
+
+                            <li>
+                                <div class="logout">Welcome <strong><?php echo $_SESSION['email'] ?></strong> <a class="btn btn-default btn-xs" href="<?php echo URL; ?>users/logout">LOGOUT</a>
+                                </div>
+                            </li>
+
+
+                        <?php else : ?>
+                            <li>
+                                <form id="signin" class="navbar-form navbar-right loginnav" role="form" action="<?php echo URL; ?>users/login" method="POST">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <input id="email" type="email" class="form-control" name="email" placeholder="Email Address">                                        
+                                    </div>
+
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                        <input id="password" type="password" class="form-control" name="password" placeholder="Password">                                        
+                                    </div>
+
+                                    <button type="submit" class="btn btn-default" name="login">Login</button>
+                                </form>
+                            </li>
+                        <?php endif; ?>
+
 
                     </ul>
                 </div><!--/.nav-collapse -->
@@ -89,7 +98,6 @@
 
 
         <div class="container">
-
 
             <?php if (isset($_SESSION['msg'])): ?>
                 <div class="alert alert-info">

@@ -1,4 +1,4 @@
-
+<?php var_dump($_SESSION);?>
 <div class="col-md-4 col-md-offset-4">
     
         <div class="panel-heading newheaders"><h3 class="panel-title">Register</h3></div>
