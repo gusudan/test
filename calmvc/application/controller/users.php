@@ -4,8 +4,14 @@ class Users extends Controller {
 
     public function index() {
 
-        require APP . 'views/_templates/header.php';
-        require APP . 'views/users/index.php';
+        if ($_SESSION['isloggedin'] == FALSE) {
+            require APP . 'views/_templates/header.php';
+            require APP . 'views/users/index.php';
+        } else {
+            $_SESSION['msg'] = "Trebuie sa va delogati.";
+            require APP . 'views/_templates/header.php';
+            require APP . 'views/problem/index.php';
+        }
         require APP . 'views/_templates/footer.php';
     }
 
@@ -47,27 +53,27 @@ class Users extends Controller {
         } else {
             $_SESSION['msg'] = "Nu ai completat datele de login.";
         }
-        header('location: ' . URL . 'users/index');
+        header('location: ' . URL);
     }
 
     public function logout() {
 
         // Unset all of the session variables.
-        $_SESSION['email'] = NULL;
+        $_SESSION = array();
         $_SESSION['isloggedin'] = FALSE;
 
 // If it's desired to kill the session, also delete the session cookie.
 // Note: This will destroy the session, and not just the session data!
-        if (ini_get("session.use_cookies")) {
-            $params = session_get_cookie_params();
-            setcookie(session_name(), '', time() - 42000, $params["path"], $params["domain"], $params["secure"], $params["httponly"]
-            );
-        }
+      //  if (ini_get("session.use_cookies")) {
+       //     $params = session_get_cookie_params();
+       //     setcookie(session_name(), '', time() - 42000, $params["path"], $params["domain"], $params["secure"], $params["httponly"]
+       //     );
+      //  }
 
 // Finally, destroy the session.
         //session_destroy();
         
-        header('location: ' . URL . 'users/index');
+        header('location: ' . URL);
         
     }
 

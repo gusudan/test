@@ -38,10 +38,10 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="<?php echo URL; ?>">Home</a></li>
-                        <li class=""><a href="<?php echo URL; ?>users">Register</a></li>
+                        <?php if ($_SESSION['isloggedin'] == TRUE) : ?>
+                        <li class="active"><a href="<?php echo URL; ?>">Home</a></li>                        
                         <li class=""><a href="<?php echo URL; ?>adauga_eveniment">Adauga Eveniment</a></li>
-
+                        <?php endif; ?>
                         <!--                        <li class="dropdown">
                                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                                                     <ul class="dropdown-menu">
@@ -65,12 +65,13 @@
 
 
                             <li>
-                                <div class="logout">Welcome <strong><?php echo $_SESSION['email'] ?></strong> <a class="btn btn-default btn-xs" href="<?php echo URL; ?>users/logout">LOGOUT</a>
+                                <div class="logout">Welcome <strong><?php echo $_SESSION['email'] ?></strong> <a class="btn btn-default" href="<?php echo URL; ?>users/logout">LOGOUT</a>
                                 </div>
                             </li>
 
 
                         <?php else : ?>
+                            <li class=""><a href="<?php echo URL; ?>users">Register</a></li>
                             <li>
                                 <form id="signin" class="navbar-form navbar-right loginnav" role="form" action="<?php echo URL; ?>users/login" method="POST">
                                     <div class="input-group">
