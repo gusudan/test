@@ -1,4 +1,6 @@
-            <div class="col-xs-7 containerzile">
+<?php echo $date;?>            
+
+<div class="col-xs-7 containerzile">
 
                 <div class="row">
                     <div class="col-xs-12 luna">

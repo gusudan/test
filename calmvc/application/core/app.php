@@ -8,6 +8,9 @@ class App {
 
     public function __construct() {
         session_start();
+        if (!isset($_SESSION['isloggedin'])){
+            $_SESSION['isloggedin'] = FALSE;
+        }
         
         $this->splitUrl();
 
