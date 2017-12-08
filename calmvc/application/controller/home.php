@@ -3,10 +3,10 @@
 
 class Home extends Controller
 {
-   
+ 
     public function index()
     {
-        $this->calendar();
+        
        if ($_SESSION['isloggedin'] == TRUE) {
             require APP . 'views/_templates/header.php';
             require APP . 'views/home/index.php';
@@ -19,13 +19,5 @@ class Home extends Controller
         require APP . 'views/_templates/footer.php';
     }
 
-    public function calendar(){
-        $date = date('l');
-        if(!isset($date)){
-            $date = date('l');
-        } else {
-            $date = mktime($date);
-        }
-        return $date;
-    }
+
 }

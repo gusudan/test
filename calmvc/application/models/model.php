@@ -52,4 +52,5 @@ class Model
         
         return $query->fetch();
     }
+ 
 }
