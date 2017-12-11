@@ -5,7 +5,7 @@ body {
 .containerzile
 {
     background-color: #333333;
-    padding: 9px;
+    padding: 19px;
     color: white;
     text-align: center;  
     
@@ -42,10 +42,17 @@ body {
     height: 100px;
     background-color: #666666;
     font-size: 16px;
-    padding: 9px;
+    
     color: #fff;
     border: 1px solid #333333;
 }
+.zileempty {
+    text-align: left;
+    height: 100px;
+    font-size: 16px;    
+    border: 1px solid #333333;
+}
+
 .zile:hover{
     background-color: #999999;
 }
@@ -82,3 +89,17 @@ body {
     color: #fff;
     font-size: 15px;
     }
+
+    @media (min-width: 1200px) {
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1 {
+    width: 14.285714285714285714285714285714%;
+    *width: 14.285714285714285714285714285714%;
+  }
+  
+  .addlink{
+      color: #fff;
+      font-size: 12px;
+  }
+}
