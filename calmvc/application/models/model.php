@@ -52,5 +52,18 @@ class Model
         
         return $query->fetch();
     }
+    
+    function addevent($iduser, $nume, $tip, $data, $ora, $detalii, $reminder){
+        
+        $sql = "INSERT INTO evenimente (iduser, titlu, tip, data, ora, detalii, reminder) VALUES (:iduser, :titlu, :tip, :data, :ora, :detalii, :reminder)";
+        $query = $this->db->prepare($sql);
+        $parameters = array(':iduser' => $iduser, ':titlu' => $nume, ':tip' => $tip, ':data' => $data, ':ora' => $ora, ':detalii' => $detalii, ':reminder' => $reminder);
+
+        // useful for debugging: you can see the SQL behind above construction by using:
+        // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
+
+        $query->execute($parameters);
+    
+    }
  
 }

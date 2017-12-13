@@ -47,6 +47,7 @@ class Users extends Controller {
                     $_SESSION['msg'] = "Parola gresita";
                 } else {
                 $_SESSION['email'] = $user->email;
+                $_SESSION['userid'] = $user->id;
                 $_SESSION['isloggedin'] = TRUE;
                 }
             }

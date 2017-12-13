@@ -17,5 +17,13 @@ class Adauga_eveniment extends Controller {
         
         require APP . 'views/_templates/footer.php';
     }
+    
+    public function adauga(){
+        if (isset($_POST['submit'])){
+            $this->model->addevent($_SESSION['userid'], $_POST["nume"], $_POST["tip"], $_POST["data"], $_POST["ora"], $_POST["detalii"], $_POST["reminder"]);
+            $_SESSION['msg'] = "Eveniment adaugat cu succes.";
+        } 
+        header('location: ' . URL . 'calendar');
+    }
 
 }
