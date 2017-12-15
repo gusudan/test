@@ -18,6 +18,9 @@
 
         <!-- Custom styles for this template -->
         <link href="<?php echo URL; ?>css/custom.css" rel="stylesheet">
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>        
+        <script src="<?php echo URL; ?>js/bootstrap.min.js"></script>
 
 
     </head>

@@ -11,9 +11,9 @@ class Home extends Controller
             require APP . 'views/_templates/header.php';
             require APP . 'views/home/index.php';
         } else {
-            $_SESSION['msg'] = "Trebuie sa va autentificati.";
             require APP . 'views/_templates/header.php';
             require APP . 'views/problem/index.php';
+            
         }
         
         require APP . 'views/_templates/footer.php';

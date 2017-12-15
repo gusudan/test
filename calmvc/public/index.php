@@ -6,6 +6,6 @@ require APP . 'config/config.php';
 
 require APP . 'core/app.php';
 require APP . 'core/controller.php';
-
+require APP . 'core/helper.php';
 
 $app = new App();

@@ -1,19 +1,20 @@
-<?php $numeluni = [
-    'Ianuarie', 
-    'Februarie', 
-    'Martie', 
-    'Aprilie', 
-    'Mai', 
-    'Iunie', 
-    'Iulie', 
-    'August', 
-    'Septembrie', 
-    'Octombrie', 
-    'Noiembrie', 
+<?php
+$numeluni = [
+    'Ianuarie',
+    'Februarie',
+    'Martie',
+    'Aprilie',
+    'Mai',
+    'Iunie',
+    'Iulie',
+    'August',
+    'Septembrie',
+    'Octombrie',
+    'Noiembrie',
     'Decembrie'
-    ] ?>
+        ]
+?>
 <div class="col-xs-7 containerzile">
-
     <div class="row">
         <div class="col-xs-12 luna">
             <div class="col-xs-3"><a href=<?php echo URL . "calendar/data/" . $prevmonth; ?>><span class="glyphicon glyphicon-chevron-left"></span></a></div>
@@ -40,13 +41,25 @@
         <?php for ($i = 1; $i < $firstday; $i++) : ?>
             <div class="col-lg-1 col-md-3 col-sm-4 col-xs-6 zileempty"></div>
         <?php endfor ?>      
-        <?php for ($i = 1; $i <= $lastday; $i++) : ?>
+
+<?php for ($i = 1; $i <= $lastday; $i++) : ?>
             <div class="col-lg-1 col-md-3 col-sm-4 col-xs-6 zile"><?php echo $i; ?>
-                <a href="#myModal" class="pull-right addlink" data-toggle="modal" data-target="#myModal" data-id="<?php echo $i;?>">
+                
+                <a href="#myModal" class="pull-right addlink" data-toggle="modal" data-target="#myModal" data-id="<?php echo strlen($i) == 1 ? "0" . $i : $i; ?>">
                     <span class="glyphicon glyphicon-plus"></span> 
                 </a>
+                
+                
+                <?php foreach ($event as $key => $value): ?>
+                    <?php if (date('d', strtotime($value->data)) == $i) : ?>
+                            <div class="linkevent"><a href='#'><?php echo $value->titlu; ?></a></div>
+                    <?php endif; ?>
+                    <!-- echo date('d',strtotime($value->data)) == $i ? 'EVENT ' : " "; -->
+    <?php endforeach; ?> 
+                    
             </div>
-        <?php endfor ?> 
+<?php endfor ?> 
+
     </div>
 
 </div>
@@ -83,7 +96,7 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label" for="textinput">Nume</label>
                                 <div class="col-sm-10">
-                                    <input type="text" required name="nume" value="12" placeholder="Nume Eveniment" class="form-control">
+                                    <input type="text" required name="nume" value="" placeholder="Nume Eveniment" class="form-control">
                                 </div>
                             </div>
 
@@ -105,7 +118,7 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label" for="textinput">Data</label>
                                 <div class="col-sm-4">
-                                    <input type="date" required name="data" placeholder="State" class="form-control">
+                                    <input type="date" required name="data" placeholder="State" value="" class="form-control">
                                 </div>
 
                                 <label class="col-sm-2 control-label" for="textinput">Ora</label>
@@ -163,8 +176,10 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <script type="text/javascript">
-$('#myModal').on('show.bs.modal', function(e) {
-    var bookId = $(e.relatedTarget).data('id');
-    $(e.currentTarget).find('input[name="nume"]').val(bookId);
-});
+
+    $('#myModal').on('show.bs.modal', function (e) {
+        var phpVar = '<?php echo $an . "-" . $luna . "-"; ?>';
+        var ziId = phpVar + $(e.relatedTarget).data('id');
+        $(e.currentTarget).find('input[name="data"]').val(ziId);
+    });
 </script>

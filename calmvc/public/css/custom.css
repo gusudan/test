@@ -45,6 +45,7 @@ body {
     
     color: #fff;
     border: 1px solid #333333;
+    
 }
 .zileempty {
     text-align: left;
@@ -102,4 +103,17 @@ body {
       color: #fff;
       font-size: 12px;
   }
+}
+
+.linkevent{
+    font-size: 10px;
+    color: #fff;
+    width: 100%;
+    border-bottom: 1px solid #fff; 
+    
+}
+
+.linkevent a {
+    color: #fff;
+    text-decoration: none;
 }

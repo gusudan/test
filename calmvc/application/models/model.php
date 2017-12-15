@@ -65,5 +65,20 @@ class Model
         $query->execute($parameters);
     
     }
+    
+    function findevents($dat){
+        
+        $sql = "SELECT * FROM evenimente WHERE iduser = ".$_SESSION['userid']." AND MONTH(data) = MONTH(:data1) AND YEAR(data) = YEAR(:data2)";
+        $query = $this->db->prepare($sql);
+        $parameters = array(':data1' => $dat, ':data2' => $dat);
+
+        // useful for debugging: you can see the SQL behind above construction by using:
+         //echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
+
+        $query->execute($parameters);
+        
+        return $query->fetchAll();
+    
+    }
  
 }

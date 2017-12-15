@@ -23,7 +23,7 @@ class Adauga_eveniment extends Controller {
             $this->model->addevent($_SESSION['userid'], $_POST["nume"], $_POST["tip"], $_POST["data"], $_POST["ora"], $_POST["detalii"], $_POST["reminder"]);
             $_SESSION['msg'] = "Eveniment adaugat cu succes.";
         } 
-        header('location: ' . URL . 'calendar');
+        header('location: ' . URL . 'calendar/data/'.$_POST["data"]);
     }
 
 }
