@@ -18,6 +18,7 @@ class Calendar extends Controller {
         $prevmonth = $date->sub(new DateInterval('P2M'))->format("Ymd");
         
         $event = $this->model->findevents($dateevents);
+        $nextev = $this->model->nextevents();
         
         if ($_SESSION['isloggedin'] == FALSE) {
             $_SESSION['msg'] = "Trebuie sa va logati.";
@@ -47,6 +48,8 @@ class Calendar extends Controller {
         $prevmonth = $date->sub(new DateInterval('P2M'))->format("Ymd");
         
         $event = $this->model->findevents($dateevents);
+        $nextev = $this->model->nextevents();
+        
         
         if ($_SESSION['isloggedin'] == FALSE) {
             $_SESSION['msg'] = "Trebuie sa va logati.";

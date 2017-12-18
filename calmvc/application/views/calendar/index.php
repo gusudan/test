@@ -56,25 +56,21 @@ $numeluni = [
                     <?php endif; ?>
                     <!-- echo date('d',strtotime($value->data)) == $i ? 'EVENT ' : " "; -->
     <?php endforeach; ?> 
-                    
             </div>
 <?php endfor ?> 
-
     </div>
-
 </div>
 
 
 <div class="col-xs-5">
     <div class="col-xs-12">
         <div class="col-xs-12 headerevenimente">Urmatoarele evenimente</div>
-        <div class="col-xs-12 urmevenimente">25.02.1999 - Next</div>
-        <div class="col-xs-12 urmevenimente">25.02.1999 - Next</div>
-        <div class="col-xs-12 urmevenimente">25.02.1999 - Next</div>
-        <div class="col-xs-12 urmevenimente">25.02.1999 - Next</div>
-        <div class="col-xs-12 urmevenimente">25.02.1999 - Next</div>
-        <div class="col-xs-12 urmevenimente">25.02.1999 - Next</div>
-        <div class="col-xs-12 urmevenimente">25.02.1999 - Next</div>
+    
+        <?php foreach ($nextev as $key => $value): ?>
+                    <div class="col-xs-12 urmevenimente"><?php echo date('d-m-Y', strtotime($value->data)) . " - " . $value->titlu; ?></div>
+                    
+        <?php endforeach; ?> 
+          
     </div>
 </div>
 

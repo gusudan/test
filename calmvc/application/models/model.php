@@ -80,5 +80,19 @@ class Model
         return $query->fetchAll();
     
     }
+    
+    function nextevents(){
+        
+        $sql = "SELECT * FROM evenimente WHERE data > CURDATE() ORDER BY data ASC ";
+        $query = $this->db->prepare($sql);
+        
+        // useful for debugging: you can see the SQL behind above construction by using:
+         //echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
+
+        $query->execute();
+        
+        return $query->fetchAll();
+    
+    }
  
 }
