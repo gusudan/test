@@ -42,22 +42,19 @@ $numeluni = [
             <div class="col-lg-1 col-md-3 col-sm-4 col-xs-6 zileempty"></div>
         <?php endfor ?>      
 
-<?php for ($i = 1; $i <= $lastday; $i++) : ?>
+        <?php for ($i = 1; $i <= $lastday; $i++) : ?>
             <div class="col-lg-1 col-md-3 col-sm-4 col-xs-6 zile"><?php echo $i; ?>
-                
+
                 <a href="#myModal" class="pull-right addlink" data-toggle="modal" data-target="#myModal" data-id="<?php echo strlen($i) == 1 ? "0" . $i : $i; ?>">
                     <span class="glyphicon glyphicon-plus"></span> 
-                </a>
-                
-                
+                </a>     
                 <?php foreach ($event as $key => $value): ?>
                     <?php if (date('d', strtotime($value->data)) == $i) : ?>
-                            <div class="linkevent"><a href='#'><?php echo $value->titlu; ?></a></div>
-                    <?php endif; ?>
-                    <!-- echo date('d',strtotime($value->data)) == $i ? 'EVENT ' : " "; -->
-    <?php endforeach; ?> 
+                        <div class="linkevent"><a href='<?php echo URL; ?>vezi/eveniment/<?php echo $value->id; ?>'><?php echo substr($value->titlu, 0, 11) . ".."; ?></a></div>
+                    <?php endif; ?>                    
+                <?php endforeach; ?> 
             </div>
-<?php endfor ?> 
+        <?php endfor ?> 
     </div>
 </div>
 
@@ -65,12 +62,15 @@ $numeluni = [
 <div class="col-xs-5">
     <div class="col-xs-12">
         <div class="col-xs-12 headerevenimente">Urmatoarele evenimente</div>
-    
+
         <?php foreach ($nextev as $key => $value): ?>
-                    <div class="col-xs-12 urmevenimente"><?php echo date('d-m-Y', strtotime($value->data)) . " - " . $value->titlu; ?></div>
-                    
+            <div class="col-xs-12 urmevenimente">
+                <a href='<?php echo URL; ?>vezi/eveniment/<?php echo $value->id; ?>'>
+                    <?php echo date('d-m-Y', strtotime($value->data)) . " - " . $value->titlu; ?>
+                </a>
+            </div>
         <?php endforeach; ?> 
-          
+
     </div>
 </div>
 
@@ -171,6 +171,8 @@ $numeluni = [
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+
 <script type="text/javascript">
 
     $('#myModal').on('show.bs.modal', function (e) {

@@ -29,10 +29,16 @@ body {
 
 .urmevenimente{
     background-color: #666666;
-    padding: 9px;
+    padding:1px;
+    padding-left: 10%;
     color: white;
-    text-align: center;
+    font-size: 12px;
+    text-align: left;
 }
+.urmevenimente a{ 
+    color: white;
+}
+
 .urmevenimente:hover{
     background-color: #999999;
 }

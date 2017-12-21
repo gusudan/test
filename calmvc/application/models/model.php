@@ -83,7 +83,7 @@ class Model
     
     function nextevents(){
         
-        $sql = "SELECT * FROM evenimente WHERE data > CURDATE() ORDER BY data ASC ";
+        $sql = "SELECT * FROM evenimente WHERE data > CURDATE() AND iduser = " . $_SESSION['userid'] . " ORDER BY data ASC ";
         $query = $this->db->prepare($sql);
         
         // useful for debugging: you can see the SQL behind above construction by using:
@@ -92,6 +92,22 @@ class Model
         $query->execute();
         
         return $query->fetchAll();
+    
+    }
+    
+    function vezieveniment($id){
+        
+        $sql = "SELECT * FROM evenimente WHERE id = :id AND iduser = " . $_SESSION['userid'];
+        $query = $this->db->prepare($sql);
+        $parameters = array(':id' => $id);
+        
+        $query->execute($parameters);
+        // useful for debugging: you can see the SQL behind above construction by using:
+         //echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
+
+        $query->execute();
+        
+        return $query->fetch();
     
     }
  
