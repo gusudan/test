@@ -4,7 +4,14 @@
     </div>
     
     <div class="row">
-        <span class="label label-primary"><?php echo $eveniment->data; ?></span>
+        <div class="data">
+            <?php
+            $data = $this->dataTransform($eveniment->data);
+            echo $data[0] . '-' . $data[1]?>
+        </div>
+        
+        
+        <span class="label label-primary"><?php echo implode('-',$this->dataTransform($eveniment->data)); ?></span>
     Ora: <?php echo $eveniment->ora; ?>
     </div>
     
@@ -22,7 +29,7 @@
         <?php foreach ($nextev as $key => $value): ?>
             <div class="col-xs-12 urmevenimente">
                 <a href='<?php echo URL; ?>vezi/eveniment/<?php echo $value->id; ?>'>
-                    <?php echo date('d-m-Y', strtotime($value->data)) . " - " . $value->titlu; ?>
+                    <?php echo implode('-',$this->dataTransform($value->data)) . " - " . $value->titlu; ?>
                 </a>
             </div>
         <?php endforeach; ?> 

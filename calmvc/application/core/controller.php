@@ -19,4 +19,29 @@ public $model = null;
         require APP . 'models/model.php';
         $this->model = new Model($this->db);
     }
+    
+        
+    public function dataTransform($data){
+         $numeluni = [
+                'Ian',
+                'Feb',
+                'Mar',
+                'Apr',
+                'Mai',
+                'Iun',
+                'Iul',
+                'Aug',
+                'Sep',
+                'Oct',
+                'Noi',
+                'Dec'
+            ];
+            $zi = date('d', strtotime($data));
+            $luna = date('n', strtotime($data));
+            $an = date('Y', strtotime($data));
+            
+            $newdate = $zi . "-" . $numeluni[$luna-1] . "-" . $an;
+            $newdate = explode('-',$newdate);
+            return $newdate;
+        }
 }
