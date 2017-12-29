@@ -110,5 +110,22 @@ class Model
         return $query->fetch();
     
     }
+    
+    function modifeveniment($titlu, $tip, $data, $ora, $detalii, $reminder, $id){
+        
+        
+        $sql = "UPDATE evenimente SET titlu = :titlu, tip = :tip, data = :data, ora = :ora, detalii = :detalii, reminder = :reminder WHERE id = :id;";
+        $query = $this->db->prepare($sql);
+        $parameters = array(':titlu' => $titlu, ':tip' => $tip, ':data' => $data, ':ora' => $ora, ':detalii' => $detalii, ':reminder' => $reminder, ':id' => $id);
+        
+        $query->execute($parameters);
+       // useful for debugging: you can see the SQL behind above construction by using:
+         //echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
+
+        $query->execute();
+        
+        
+                   
+    }
  
 }

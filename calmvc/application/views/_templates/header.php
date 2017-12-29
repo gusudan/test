@@ -42,9 +42,8 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <?php if ($_SESSION['isloggedin'] == TRUE) : ?>
-                        <li class="active"><a href="<?php echo URL; ?>">Home</a></li> 
-                        <li class="active"><a href="<?php echo URL; ?>calendar">Calendar</a></li> 
-                        <li class=""><a href="<?php echo URL; ?>adauga_eveniment">Adauga Eveniment</a></li>
+                        <li><a href="<?php echo URL; ?>">Home</a></li> 
+                        <li><a href="<?php echo URL; ?>calendar">Calendar</a></li> 
                         <?php endif; ?>
                         <!--                        <li class="dropdown">
                                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>

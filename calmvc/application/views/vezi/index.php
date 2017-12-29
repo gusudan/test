@@ -1,38 +1,44 @@
 <div class="col-xs-7 containerzile">
-    <div class="row">
-        <h1><?php echo $eveniment->titlu; ?></h1>
+    <div class="row ">
+        <h1 class="vezititlu"><?php echo $eveniment->titlu; ?></h1>
+
     </div>
-    
+
     <div class="row">
-        <div class="data">
-            <?php
-            $data = $this->dataTransform($eveniment->data);
-            echo $data[0] . '-' . $data[1]?>
+        <div class="col-xs-3 vezidata">
+            <span class="col-xs-12 vezizi">
+                <?php
+                $data = $this->dataTransform($eveniment->data);
+                echo $data[0]
+                ?>
+            </span>
+            <span class="col-xs-12 veziluna">
+                <?php
+                echo $data[1]
+                ?>
+            </span>
+            <span class="col-xs-12 vezian">
+                <?php
+                echo $data[2]
+                ?>
+            </span>
         </div>
-        
-        
-        <span class="label label-primary"><?php echo implode('-',$this->dataTransform($eveniment->data)); ?></span>
-    Ora: <?php echo $eveniment->ora; ?>
+
+
+        <div class="col-xs-3 data">
+            <?php echo implode('-', $data); ?>
+        </div>
+
+        <div class="col-xs-3 data">
+            Ora: <?php echo $eveniment->ora; ?>
+        </div>
     </div>
-    
+
     <div class="row">
-    Detalii: <?php echo $eveniment->detalii; ?>
-    
-    </div>
-</div>
-
-
-<div class="col-xs-5">
-    <div class="col-xs-12">
-        <div class="col-xs-12 headerevenimente">Urmatoarele evenimente</div>
-
-        <?php foreach ($nextev as $key => $value): ?>
-            <div class="col-xs-12 urmevenimente">
-                <a href='<?php echo URL; ?>vezi/eveniment/<?php echo $value->id; ?>'>
-                    <?php echo implode('-',$this->dataTransform($value->data)) . " - " . $value->titlu; ?>
-                </a>
-            </div>
-        <?php endforeach; ?> 
+        Detalii: <?php echo $eveniment->detalii; ?>
 
     </div>
 </div>
+
+
+<?php include APP . 'views/_templates/nextevents.php'; ?>

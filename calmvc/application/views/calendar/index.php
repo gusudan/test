@@ -58,21 +58,7 @@ $numeluni = [
     </div>
 </div>
 
-
-<div class="col-xs-5">
-    <div class="col-xs-12">
-        <div class="col-xs-12 headerevenimente">Urmatoarele evenimente</div>
-
-        <?php foreach ($nextev as $key => $value): ?>
-            <div class="col-xs-12 urmevenimente">
-                <a href='<?php echo URL; ?>vezi/eveniment/<?php echo $value->id; ?>'>
-                    <?php echo date('d-m-Y', strtotime($value->data)) . " - " . $value->titlu; ?>
-                </a>
-            </div>
-        <?php endforeach; ?> 
-
-    </div>
-</div>
+<?php include APP . 'views/_templates/nextevents.php'; ?>
 
 <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
