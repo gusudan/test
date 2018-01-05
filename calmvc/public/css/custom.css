@@ -35,7 +35,7 @@ body {
     padding:1px;
     padding-left: 10%;
     color: white;
-    font-size: 12px;
+    font-size: 1.1em;
     text-align: left;
 }
 .urmevenimente a{ 
@@ -128,10 +128,10 @@ body {
 }
 
 .yellow {
-    color: #ffe700;
+    color: #33ccff;
 }
 .red {
-    color: #ff0000;
+    color: #ff6600;
 }
 
 @font-face{
@@ -144,26 +144,72 @@ body {
     src: url(fonts/OpenSans-Regular.ttf)
 }
 
+@font-face{
+    font-family: clock;
+    src: url(fonts/DS-DIGIT.TTF)
+}
+
 .vezititlu{
     font-family: myfirstfont;
     text-transform: uppercase;
     text-align: left;
     padding-left: 20px;
+    margin-top: 2px;
     
 }
 
 .vezidata{
-   line-height: 25px;
+   line-height: 31px;
    font-size: 1em;
+   background-color: #fff;
+   color: black;
+   text-align: center;
+   padding: 0;
+  
 }
 .vezizi{
    font-weight: bold;
+   font-size: 2.8em;
+   line-height: 48px;
+   padding: 0;
 }
 .veziluna{
    line-height: 10px;
    text-transform: uppercase;
-   font-size: 1.5em;
+   font-size: 1.8em;
+   padding: 0;
 }
 .vezian{
    font-weight: bold;
+   font-size: 1.3em;
+   padding: 0;
 }
+.ora{
+    font-family: clock;
+    font-size: 2.3em;
+    padding: 0;
+    line-height: 40px;
+}
+.tip{
+    text-align: left;
+    font-size: 1.5em;
+    padding-left: 20%;
+}
+.detalii{
+    padding-right: 30px;
+}
+.popover-title{
+    color: black;
+}
+.linie{
+    border-bottom: 2px solid #999999;
+    width: 100%;
+    margin: 10px 0 10px 0;
+    
+    
+}
+.editvezi{
+    text-align: left;
+    padding-left:20px;
+}
+

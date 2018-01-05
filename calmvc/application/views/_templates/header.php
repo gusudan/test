@@ -18,13 +18,12 @@
 
         <!-- Custom styles for this template -->
         <link href="<?php echo URL; ?>css/custom.css" rel="stylesheet">
-        
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>        
         <script src="<?php echo URL; ?>js/bootstrap.min.js"></script>
-
+        <script src="<?php echo URL; ?>js/bootstrap-confirmation.min.js"></script>
 
     </head>
-
     <body>
 
         <!-- Fixed navbar -->
@@ -42,8 +41,8 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <?php if ($_SESSION['isloggedin'] == TRUE) : ?>
-                        <li><a href="<?php echo URL; ?>">Home</a></li> 
-                        <li><a href="<?php echo URL; ?>calendar">Calendar</a></li> 
+                            <li><a href="<?php echo URL; ?>">Home</a></li> 
+                            <li><a href="<?php echo URL; ?>calendar">Calendar</a></li> 
                         <?php endif; ?>
                         <!--                        <li class="dropdown">
                                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>

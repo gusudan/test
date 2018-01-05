@@ -72,7 +72,7 @@ $numeluni = [
 
                 <div class="row">
                     <div class="col-md-12">
-                        <form class="form-horizontal" role="form" action="<?php echo URL; ?>adauga_eveniment/adauga" method="POST">
+                        <form class="form-horizontal" role="form" action="<?php echo URL; ?>calendar/adauga" method="POST">
 
                             <!-- Text input-->
                             <div class="form-group">

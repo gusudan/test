@@ -48,5 +48,29 @@ class Edit extends Controller {
         }
         require APP . 'views/_templates/footer.php';
     }
+    
+    public function delete($id) {
+
+        if (($_SESSION['isloggedin'] == TRUE) AND (isset($id))) {
+
+                $del = $this->model->delete($id);
+                if($del>0){
+                $_SESSION['msg'] = "Eveniment sters cu succes.";
+                } else {
+                    $_SESSION['msg'] = "Evenimentul nu exista.";
+                }
+                header('location: ' . URL . 'calendar');
+          
+        } elseif (($_SESSION['isloggedin'] == TRUE) AND (!isset($id))) {
+            $_SESSION['msg'] = "Evenimentul nu exista.";
+            require APP . 'views/_templates/header.php';
+            require APP . 'views/_templates/footer.php';
+        } else {
+            $_SESSION['msg'] = "Trebuie sa va autentificati.";
+            require APP . 'views/_templates/header.php';
+            require APP . 'views/problem/index.php';
+        }
+        require APP . 'views/_templates/footer.php';
+    }
 
 }

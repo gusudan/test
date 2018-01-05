@@ -127,5 +127,20 @@ class Model
         
                    
     }
+    
+    public function delete($id)
+    {
+        $sql = "DELETE FROM evenimente WHERE id = :id AND iduser = " . $_SESSION['userid'];
+        $query = $this->db->prepare($sql);
+        $parameters = array(':id' => $id);
+
+        // useful for debugging: you can see the SQL behind above construction by using:
+        // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
+
+        $query->execute($parameters);
+        
+        return $query->rowCount();
+        
+    }
  
 }
